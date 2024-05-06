@@ -16,8 +16,22 @@ var greenIcon = L.icon({
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
-let koor = [[-0.48441190596084355, 117.12887316928524],[-0.4910381557300359, 117.14903350059049],[-0.494695119875663, 117.12445189128229]];
+function Cluster(number){
+    if(number == 1) {
+        let koor = [[-0.48441190596084355, 117.12887316928524],[-0.4910381557300359, 117.14903350059049],[-0.494695119875663, 117.12445189128229]];
+        Point(koor);
+    }else if (number == 2) {
+        let koor = [[-0.4676238154165759, 117.15395441923752],[-0.46003763132158393, 117.13969192610878],[-0.4526335079174855, 117.15616965733356]];
+        Point(koor);
+    } else {
+        let koor = [[-0.4828568481993843, 117.1612373945145],[-0.4901092163901253, 117.1634222871049],[-0.4783354934377312, 117.17179770876412]];
+        Point(koor);
+    }
+}
 
-for(let i = 0; i < koor.length; i++){
-    L.marker(koor[i]).addTo(map);
+function Point(koor){
+    for(let i = 0; i < koor.length; i++){
+        marker = L.marker(koor[i]).addTo(map);
+    }
+    
 }
