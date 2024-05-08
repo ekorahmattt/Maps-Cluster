@@ -33,5 +33,4 @@ function Point(koor){
     for(let i = 0; i < koor.length; i++){
         marker = L.marker(koor[i]).addTo(map);
     }
-    $(".leaflet-marker-icon").remove();
 }
