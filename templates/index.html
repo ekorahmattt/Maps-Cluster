@@ -62,9 +62,9 @@
                     </div>
                 </div>
                 <!-- {% for i in cluster1 %}
-                <p>{{[i[4], i[5]]}}</p>
+                <p>{{i}}</p>
                 {% endfor %} -->
-                <p>{{cluster1}}</p>
+                <p id="data"></p>
             </div>
         </div>
     </div>
@@ -93,7 +93,9 @@
         
         function Cluster(number){
             if(number == 1) {
-                let koor = [];
+                let koor = '{{cluster1}}';
+
+                // let koor = [['Eko', 8, 10],['Bayu', 9, 0]]
                 Point(koor);
             }else if (number == 2) {
                 let koor = [[-0.4676238154165759, 117.15395441923752],[-0.46003763132158393, 117.13969192610878],[-0.4526335079174855, 117.15616965733356]];
@@ -105,9 +107,14 @@
         }
         
         function Point(koor){
-            for(let i = 0; i < koor.length; i++){
-                marker = L.marker(koor[i]).addTo(map);
-            }
+            // for(let i = 0; i < koor.length; i++){
+            //     // marker = L.marker(koor[i]).addTo(map);
+    
+            //     // document.getElementById('data').innerHTML = koor;
+            //     // console.log(koor)
+            // }
+            document.getElementById('data').innerHTML = koor;
+            console.log(koor)
         }
     </script>
 </body>

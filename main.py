@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, request, url_for, jsonify
 from flask_mysqldb import MySQL
 from sklearn.cluster import KMeans
+import json
 
 app = Flask(__name__)
 
@@ -23,10 +24,12 @@ def index():
 
     cur = mysql.connection.cursor()
     cur.execute('SELECT * FROM data_cluster')
+    row_headers = [x[0] for x in cur.description]
 
     for x in cur.fetchall():
         data.append(tuple(i for i in x if i != x[0]))
-        kec.append(x)
+        kec.append(list(x))
+        # kec.append(dict(zip(row_headers, x)))
 
     kmeans = KMeans(n_clusters=3)
     kmeans.fit(data)
