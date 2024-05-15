@@ -24,16 +24,14 @@ def index():
 
     cur = mysql.connection.cursor()
     cur.execute('SELECT * FROM data_cluster')
-    row_headers = [x[0] for x in cur.description]
 
     for x in cur.fetchall():
-        data.append(tuple(i for i in x if i != x[0]))
+        data.append(list(i for i in x if i != x[0] and i != x[4] and i != x[5]))
         kec.append(list(x))
-        # kec.append(dict(zip(row_headers, x)))
 
     kmeans = KMeans(n_clusters=3)
     kmeans.fit(data)
-    y = kmeans.fit_predict(data)
+    y = kmeans.predict(data)
 
     for i in range(len(y)):
         if y[i] == 0:
@@ -43,7 +41,7 @@ def index():
         else:
             cluster3.append(kec[i])
 
-    return render_template('index.html', cluster1=cluster1, cluster2=cluster2, cluster3=cluster3)
+    return render_template('index.html', data=data, cluster1=cluster1, cluster2=cluster2, cluster3=cluster3)
 
 #############################################################################################
 @app.route('/admin', methods=['GET','POST'])
