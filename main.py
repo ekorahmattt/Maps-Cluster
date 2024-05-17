@@ -1,11 +1,10 @@
 from flask import Flask, render_template, redirect, request, url_for, session
 from flask_mysqldb import MySQL
 from sklearn.cluster import KMeans
-import json
 
 app = Flask(__name__)
 
-app.secret_key = 'eko1234'
+app.secret_key = 'cluster1234'
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
@@ -14,7 +13,7 @@ app.config['MYSQL_DB'] = 'map_cluster'
 
 mysql = MySQL(app)
 
-##############################################################################################
+##################################### HALAMAN UTAMA #########################################################
 @app.route('/', methods=['GET'])
 def index():
     data = []
@@ -45,6 +44,7 @@ def index():
 
     return render_template('index.html', data=data, cluster1=cluster1, cluster2=cluster2, cluster3=cluster3)
 
+##################################### LOGIN ########################################################
 @app.route('/login', methods=['POST'])
 def login():
     if request.method == "POST":
@@ -57,11 +57,13 @@ def login():
             warn = 'salah'
             return render_template('index.html', warn=warn)
 
+######################################## LOGOUT #####################################################
 @app.route('/logout')
 def logout():
     session.pop('loggedin', None)
     return redirect(url_for('index'))
-#############################################################################################
+
+######################################## HALAMAN DASHBOARD ADMIN #####################################################
 @app.route('/admin', methods=['GET','POST'])
 def admin():
     cur = mysql.connection.cursor()
@@ -71,7 +73,7 @@ def admin():
     cur.close()
     return render_template('admin.html', data=data)
 
-############################################################################################
+######################################## UPDATE DATA ####################################################
 @app.route('/update', methods=['POST'])
 def update_data():
     if request.method == "POST":
@@ -86,6 +88,6 @@ def update_data():
         mysql.connection.commit()
     return redirect(url_for('admin'))
 
-############################################################################################
+######################################## RUNING DATA ####################################################
 if __name__ == "__main__":
     app.run(debug=True)
