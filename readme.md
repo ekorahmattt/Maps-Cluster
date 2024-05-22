@@ -19,7 +19,7 @@ Serta tombol login untuk menuju kehalaman admin.
 
 Pada canvas Maps, menggunakan library <a href:"https://leafletjs.com/">Leafletjs</a> pada javascript. Pada canvas terdapat kotak tombol untuk navigasi area cluster 1-3. Tombol cluster yang ditekan akan menampilkan area cluster dengan penanda lingkaran berwarna sesuai kategori wilayah berdasarkan banyaknya kasus.
 
-<img src="images/cluster.png" width="50%">
+<img src="images/cluster.png" width="75%">
 
 Data cluster yang ditampilkan di canvas map berasal dari hasil proses clustering menggunakan algoritma <a href="https://medium.com/@afrizalfir/kmeans-clustering-dan-implementasinya-5e967dc604cf">K-means</a> dengan bantuan library <a  href="https://scikit-learn.org/stable/">Scikit-learn</a>. Data-data yang dihasilkan berasal dari database yang dapat diakses pada halaman admin sebagai berikut.
 
