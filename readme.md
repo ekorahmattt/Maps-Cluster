@@ -1,9 +1,9 @@
 # Web Clustering Map
 
 Web untuk mengelompokan tempat rawan kasus narkoba yang tercatat dari tahun 2021 hingga 2023 di Kota Samarinda. Dimana catatan atau data kasus setiap kecamatan di simpan kedalam database untuk diolah dan di <i>Clustering</i> untuk mengelompokan wilayah kecamatan kota Samarinda kedalam 3 <i>cluster</i>:
-1. Cluster 1 : Sebagai daerah kasus rendah (kode $${\color{green}Hijau}$$)
+1. Cluster 1 : Sebagai daerah kasus rendah (kode $${\color{lightgreen}Hijau}$$)
 2. Cluster 2 : Sebagai daerah kasus sedang (kode $${\color{blue}Biru}$$)
-3. Cluster 3 : Sebagai daerah kasus tinggi (kode $${\color{red}Merah}$$)
+3. Cluster 3 : Sebagai daerah kasus tinggi (kode ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png))
 
 Website ini dibangun menggunakan library <b>Flask</b> dari Python. Memiliki 2 halaman yaitu Dashboard dan Halaman Admin. Tampilan utama atau Dashboard sebagai berikut.
 
