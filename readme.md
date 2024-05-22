@@ -17,7 +17,7 @@ Serta tombol login untuk menuju kehalaman admin.
 
 <img src="images/login.png" width="75%">
 
-Pada canvas Maps, menggunakan library <a href:"https://leafletjs.com/">Leafletjs</a> pada javascript. Pada canvas terdapat kotak tombol untuk navigasi area cluster 1-3. Tombol cluster yang ditekan akan menampilkan area cluster dengan penanda lingkaran berwarna sesuai kategori wilayah berdasarkan banyaknya kasus.
+Pada canvas Maps, menggunakan library <a href="https://leafletjs.com/">Leafletjs</a> pada javascript. Pada canvas terdapat kotak tombol untuk navigasi area cluster 1-3. Tombol cluster yang ditekan akan menampilkan area cluster dengan penanda lingkaran berwarna sesuai kategori wilayah berdasarkan banyaknya kasus.
 
 <img src="images/cluster.png" width="75%">
 
